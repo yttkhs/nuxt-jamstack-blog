@@ -36,10 +36,16 @@ export default {
     "@nuxtjs/axios",
     "@nuxtjs/pwa",
     "@nuxtjs/dotenv",
-    "@nuxtjs/style-resources"
+    "@nuxtjs/style-resources",
+    "nuxt-webfontloader"
   ],
   styleResources: {
     scss: ["~/assets/scss/_variable.scss", "~/assets/scss/_mixin.scss"]
+  },
+  webfontloader: {
+    google: {
+      families: ["M PLUS 1p:Regular,Medium,Bold,Extra-Bold"]
+    }
   },
   axios: {},
   typescript: {
