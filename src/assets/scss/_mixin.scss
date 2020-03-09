@@ -1,0 +1,11 @@
+@mixin ContentHeading($number) {
+  $size: 28px;
+  $height: 38px;
+  $calc-size: calc(#{$size} - (2px * #{$number}));
+  $calc-height: calc(#{$height} - (2px * #{$number}));
+
+  font-size: $calc-size;
+  line-height: $calc-height;
+  margin-bottom: $calc-height;
+  margin-top: calc(#{$calc-height} + 20px);
+}

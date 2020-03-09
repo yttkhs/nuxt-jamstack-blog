@@ -1,1 +1,26 @@
 @import "~reset-css/sass/reset";
+@import "variable";
+@import "mixin";
+
+body {
+  background-color: $COLOR_BASE;
+  color: #ffffff;
+  font-family: "M PLUS 1p", sans-serif;
+  font-weight: normal;
+  letter-spacing: 0.05em;
+}
+
+main {
+  margin-left: auto;
+  margin-right: auto;
+  max-width: $CONTENTS_WIDTH;
+  padding: 100px 30px;
+}
+
+a {
+  color: #ffffff;
+}
+
+img {
+  vertical-align: middle;
+}
