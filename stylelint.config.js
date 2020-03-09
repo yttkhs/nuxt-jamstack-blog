@@ -27,7 +27,12 @@ module.exports = {
     "comment-whitespace-inside": "always",
     "comment-empty-line-before": "always",
     "at-rule-no-vendor-prefix": true,
-    "rule-empty-line-before": "always-multi-line",
+    "rule-empty-line-before": [
+      "always-multi-line",
+      {
+        except: ["first-nested"]
+      }
+    ],
     "selector-pseudo-element-colon-notation": "double",
     "selector-pseudo-class-parentheses-space-inside": "never",
     "media-feature-range-operator-space-before": "always",

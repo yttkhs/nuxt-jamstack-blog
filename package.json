@@ -15,9 +15,11 @@
   "dependencies": {
     "@nuxtjs/axios": "^5.3.6",
     "@nuxtjs/dotenv": "^1.4.0",
+    "@nuxtjs/markdownit": "^1.2.9",
     "@nuxtjs/pwa": "^3.0.0-0",
     "nuxt": "^2.0.0",
     "nuxt-webfontloader": "^1.1.0",
+    "prismjs": "^1.19.0",
     "reset-css": "^5.0.1"
   },
   "devDependencies": {
@@ -29,8 +31,12 @@
     "@nuxtjs/sitemap": "^2.0.1",
     "@nuxtjs/style-resources": "^1.0.0",
     "@nuxtjs/stylelint-module": "^3.1.0",
+    "@types/prismjs": "^1.16.0",
+    "@typescript-eslint/eslint-plugin": "^2.22.0",
+    "@typescript-eslint/parser": "^2.22.0",
     "babel-eslint": "^10.0.1",
     "contentful": "^7.14.0",
+    "dayjs": "^1.8.21",
     "eslint": "^6.1.0",
     "eslint-config-prettier": "^6.10.0",
     "eslint-plugin-nuxt": ">=0.4.2",
