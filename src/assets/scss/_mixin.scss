@@ -5,6 +5,7 @@
   $calc-height: calc(#{$height} - (2px * #{$number}));
 
   font-size: $calc-size;
+  font-weight: bold;
   line-height: $calc-height;
   margin-bottom: $calc-height;
   margin-top: calc(#{$calc-height} + 20px);

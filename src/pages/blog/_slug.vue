@@ -38,6 +38,7 @@ export default Vue.extend({
 <style scoped lang="scss">
 .heading {
   font-size: 36px;
+  font-weight: bold;
   line-height: 48px;
 }
 

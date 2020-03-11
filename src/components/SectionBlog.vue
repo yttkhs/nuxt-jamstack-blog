@@ -4,7 +4,7 @@
     <ul class="post-list">
       <li v-for="post in posts" :key="post.id" class="post">
         <nuxt-link
-          :to="{ name: 'post-slug', params: { slug: post.slug, post: post } }"
+          :to="{ name: 'blog-slug', params: { slug: post.slug, post: post } }"
           class="title"
           >{{ post.title }}</nuxt-link
         >
@@ -37,8 +37,6 @@ export default Vue.extend({
 
 <style scoped lang="scss">
 .SectionBlog {
-  margin-top: 120px;
-
   .heading {
     font-size: 36px;
     font-weight: bold;
@@ -63,7 +61,7 @@ export default Vue.extend({
 
   .info {
     display: flex;
-    margin-top: 5px;
+    margin-top: 10px;
 
     .time,
     .category {

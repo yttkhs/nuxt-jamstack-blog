@@ -1,10 +1,10 @@
 <template>
   <header>
-    <span class="logo">YUTA TAKAHASHI</span>
+    <nuxt-link to="/" class="logo">YUTA TAKAHASHI</nuxt-link>
     <nav>
       <ul>
         <li>ABOUT</li>
-        <li>BLOG</li>
+        <li><nuxt-link to="/blog">BLOG</nuxt-link></li>
         <li>WORKS</li>
       </ul>
     </nav>
@@ -36,6 +36,7 @@ header {
   font-size: 14px;
   font-weight: bold;
   line-height: 100%;
+  text-decoration: none;
 }
 
 nav {
@@ -48,6 +49,10 @@ nav {
 
       &:not(:first-of-type) {
         margin-left: 30px;
+      }
+
+      a {
+        text-decoration: none;
       }
     }
   }

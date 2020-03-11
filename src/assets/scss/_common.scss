@@ -15,6 +15,12 @@ main {
   margin-right: auto;
   max-width: $CONTENTS_WIDTH;
   padding: 100px 30px;
+
+  & > section {
+    &:not(:first-of-type) {
+      margin-top: 120px;
+    }
+  }
 }
 
 a {

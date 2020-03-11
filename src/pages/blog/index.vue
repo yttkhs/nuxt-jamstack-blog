@@ -1,21 +1,20 @@
 <template>
   <main>
-    <SectionProfile />
-    <SectionBlog :posts="postsNewArrival" />
+    <SectionBlog :posts="posts" />
   </main>
 </template>
 
 <script lang="ts">
 import Vue from "vue";
 import { Context } from "@nuxt/types";
-import client from "~/plugins/contentful";
-import SectionProfile from "~/components/SectionProfile.vue";
 import SectionBlog from "~/components/SectionBlog.vue";
-import { SortPostsData } from "~/plugins/sortPostsData.ts";
+import client from "~/plugins/contentful";
 
 export default Vue.extend({
-  name: "",
-  components: { SectionProfile, SectionBlog },
+  name: "Blog",
+  components: {
+    SectionBlog
+  },
   async asyncData(ctx: Context) {
     try {
       const { items } = await client.getEntries({
@@ -29,14 +28,6 @@ export default Vue.extend({
     } catch (e) {
       // eslint-disable-next-line no-console
       console.log(e);
-    }
-  },
-  data: () => ({
-    limit: 5
-  }),
-  computed: {
-    postsNewArrival(): SortPostsData {
-      return this.posts.slice(0, this.limit);
     }
   }
 });
