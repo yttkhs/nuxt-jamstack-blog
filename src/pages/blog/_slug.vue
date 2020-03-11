@@ -6,6 +6,7 @@
         <time class="time">{{ post.createdAt }}</time>
         <span class="category">{{ post.category.fields.name }}</span>
       </div>
+      <!-- eslint-disable -->
       <div class="contents" v-html="$md.render(post.content)"></div>
     </article>
   </main>
@@ -37,9 +38,17 @@ export default Vue.extend({
 
 <style scoped lang="scss">
 .heading {
-  font-size: 36px;
   font-weight: bold;
-  line-height: 48px;
+
+  @include MQ("pc") {
+    font-size: 36px;
+    line-height: 48px;
+  }
+
+  @include MQ("sp") {
+    font-size: 26px;
+    line-height: 38px;
+  }
 }
 
 .info {
@@ -50,15 +59,29 @@ export default Vue.extend({
   .category {
     font-size: 16px;
     line-height: 100%;
+
+    @include MQ("sp") {
+      font-size: 14px;
+    }
   }
 
   .category {
     margin-left: 15px;
+
+    @include MQ("sp") {
+      margin-left: 10px;
+    }
   }
 }
 
 .contents {
-  margin-top: 100px;
+  @include MQ("pc") {
+    margin-top: 100px;
+  }
+
+  @include MQ("sp") {
+    margin-top: 75px;
+  }
 
   @for $i from 0 through 5 {
     /deep/ h#{$i + 1} {
@@ -67,38 +90,89 @@ export default Vue.extend({
   }
 
   /deep/ p {
-    font-size: 16px;
-    line-height: 26px;
+    @include MQ("pc") {
+      font-size: 16px;
+      line-height: 26px;
+    }
+
+    @include MQ("sp") {
+      font-size: 14px;
+      line-height: 24px;
+    }
 
     & + p {
-      margin-top: 26px;
+      @include MQ("pc") {
+        margin-top: 26px;
+      }
+
+      @include MQ("sp") {
+        margin-top: 24px;
+      }
     }
   }
 
   /deep/ pre {
-    margin-bottom: 26px;
-    margin-top: 26px;
+    @include MQ("pc") {
+      margin-bottom: 26px;
+      margin-top: 26px;
+    }
+
+    @include MQ("sp") {
+      font-size: 12px;
+      margin-bottom: 24px;
+      margin-top: 24px;
+    }
   }
 
   /deep/ ul {
     list-style: disc inside;
-    margin-bottom: 26px;
-    margin-top: 26px;
+
+    @include MQ("pc") {
+      margin-bottom: 26px;
+      margin-top: 26px;
+    }
+
+    @include MQ("sp") {
+      margin-bottom: 24px;
+      margin-top: 24px;
+    }
 
     li {
-      font-size: 16px;
-      line-height: 26px;
+      @include MQ("pc") {
+        font-size: 16px;
+        line-height: 26px;
+      }
+
+      @include MQ("sp") {
+        font-size: 14px;
+        line-height: 24px;
+      }
     }
   }
 
   /deep/ ol {
     list-style: decimal inside;
-    margin-bottom: 26px;
-    margin-top: 26px;
+
+    @include MQ("pc") {
+      margin-bottom: 26px;
+      margin-top: 26px;
+    }
+
+    @include MQ("sp") {
+      margin-bottom: 24px;
+      margin-top: 24px;
+    }
 
     li {
-      font-size: 16px;
-      line-height: 26px;
+      @include MQ("pc") {
+        font-size: 16px;
+        line-height: 26px;
+      }
+
+      @include MQ("sp") {
+        font-size: 14px;
+        line-height: 24px;
+      }
     }
   }
 

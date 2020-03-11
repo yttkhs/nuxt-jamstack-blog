@@ -38,13 +38,22 @@ export default Vue.extend({
 footer {
   align-items: center;
   display: flex;
-  height: $HEADER_HEADER;
   justify-content: space-between;
   margin-left: auto;
   margin-right: auto;
-  max-width: $CONTENTS_WIDTH;
-  padding-left: 30px;
-  padding-right: 30px;
+
+  @include MQ("pc") {
+    height: $HEADER_HEADER;
+    max-width: $CONTENTS_WIDTH;
+    padding-left: 30px;
+    padding-right: 30px;
+  }
+
+  @include MQ("sp") {
+    height: $HEADER_HEADER - 30px;
+    padding-left: 20px;
+    padding-right: 20px;
+  }
 
   nav {
     ul {
@@ -58,15 +67,29 @@ footer {
 
         &.github {
           img {
-            height: 22px;
-            width: 22px;
+            @include MQ("pc") {
+              height: 22px;
+              width: 22px;
+            }
+
+            @include MQ("sp") {
+              height: 20px;
+              width: 20px;
+            }
           }
         }
 
         &.twitter {
           img {
-            height: 20px;
-            width: 25px;
+            @include MQ("pc") {
+              height: 20px;
+              width: 25px;
+            }
+
+            @include MQ("sp") {
+              height: 15px;
+              width: 20px;
+            }
           }
         }
       }
@@ -76,6 +99,10 @@ footer {
   .copyright {
     font-size: 12px;
     line-height: 100%;
+
+    @include MQ("sp") {
+      font-size: 10px;
+    }
   }
 }
 </style>

@@ -36,7 +36,7 @@ export default Vue.extend({
   }),
   computed: {
     postsNewArrival(): SortPostsData {
-      return this.posts.slice(0, this.limit);
+      return (this as any).posts.slice(0, this.limit);
     }
   }
 });

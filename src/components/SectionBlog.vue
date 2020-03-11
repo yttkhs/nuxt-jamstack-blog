@@ -38,36 +38,74 @@ export default Vue.extend({
 <style scoped lang="scss">
 .SectionBlog {
   .heading {
-    font-size: 36px;
     font-weight: bold;
     line-height: 100%;
+
+    @include MQ("pc") {
+      font-size: 36px;
+    }
+
+    @include MQ("sp") {
+      font-size: 26px;
+    }
   }
 
   .post-list {
-    margin-top: 40px;
-  }
+    @include MQ("pc") {
+      margin-top: 40px;
+    }
 
-  .post {
-    &:not(:first-of-type) {
+    @include MQ("sp") {
       margin-top: 30px;
     }
   }
 
+  .post {
+    &:not(:first-of-type) {
+      @include MQ("pc") {
+        margin-top: 30px;
+      }
+
+      @include MQ("sp") {
+        margin-top: 20px;
+      }
+    }
+  }
+
   .title {
-    font-size: 16px;
-    line-height: 26px;
     text-decoration: none;
+
+    @include MQ("pc") {
+      font-size: 16px;
+      line-height: 26px;
+    }
+
+    @include MQ("sp") {
+      font-size: 14px;
+      line-height: 23px;
+    }
   }
 
   .info {
     display: flex;
-    margin-top: 10px;
+
+    @include MQ("pc") {
+      margin-top: 10px;
+    }
+
+    @include MQ("sp") {
+      margin-top: 7.5px;
+    }
 
     .time,
     .category {
       color: $COLOR_GRAY;
       font-size: 14px;
       line-height: 100%;
+
+      @include MQ("sp") {
+        font-size: 12px;
+      }
     }
 
     .category {

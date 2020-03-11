@@ -27,9 +27,11 @@
         </ul>
       </nav>
     </div>
+    <!--
     <figure class="thumbnail">
       <img src="" alt="" />
     </figure>
+    -->
   </section>
 </template>
 
@@ -47,37 +49,78 @@ export default Vue.extend({
   display: flex;
 
   .name {
-    font-size: 48px;
     font-weight: bold;
-    line-height: 100%;
+
+    @include MQ("pc") {
+      font-size: 48px;
+      line-height: 100%;
+    }
+
+    @include MQ("sp") {
+      font-size: 38px;
+      line-height: 130%;
+    }
   }
 
   .position {
-    font-size: 18px;
     line-height: 100%;
-    margin-top: 20px;
+    margin-top: 15px;
+
+    @include MQ("pc") {
+      font-size: 18px;
+    }
+
+    @include MQ("sp") {
+      font-size: 16px;
+    }
   }
 
   .introduction {
-    font-size: 14px;
-    line-height: 23px;
-    margin-top: 40px;
+    @include MQ("pc") {
+      font-size: 14px;
+      line-height: 23px;
+      margin-top: 40px;
+    }
+
+    @include MQ("sp") {
+      font-size: 12px;
+      line-height: 20px;
+      margin-top: 30px;
+    }
   }
 
   .sns {
-    margin-top: 40px;
+    @include MQ("pc") {
+      margin-top: 40px;
+    }
+
+    @include MQ("sp") {
+      margin-top: 30px;
+    }
 
     ul {
-      display: flex;
+      @include MQ("pc") {
+        display: flex;
+      }
 
       li {
         &:not(:first-of-type) {
-          margin-left: 20px;
+          @include MQ("pc") {
+            margin-left: 20px;
+          }
+
+          @include MQ("sp") {
+            margin-top: 15px;
+          }
         }
 
         a {
           color: $COLOR_WHITE;
           position: relative;
+
+          @include MQ("sp") {
+            font-size: 14px;
+          }
 
           &::before {
             background-position: center;
@@ -93,24 +136,52 @@ export default Vue.extend({
 
         &.github {
           a {
-            padding-left: 32px;
+            @include MQ("pc") {
+              padding-left: 32px;
+            }
+
+            @include MQ("sp") {
+              padding-left: 30px;
+            }
 
             &::before {
               background-image: url("~assets/images/github.svg");
-              height: 22px;
-              width: 22px;
+
+              @include MQ("pc") {
+                height: 22px;
+                width: 22px;
+              }
+
+              @include MQ("sp") {
+                height: 20px;
+                width: 20px;
+              }
             }
           }
         }
 
         &.twitter {
           a {
-            padding-left: 35px;
+            @include MQ("pc") {
+              padding-left: 35px;
+            }
+
+            @include MQ("sp") {
+              padding-left: 30px;
+            }
 
             &::before {
               background-image: url("~assets/images/twitter.svg");
-              height: 20px;
-              width: 25px;
+
+              @include MQ("pc") {
+                height: 20px;
+                width: 25px;
+              }
+
+              @include MQ("sp") {
+                height: 15px;
+                width: 20px;
+              }
             }
           }
         }
@@ -121,9 +192,9 @@ export default Vue.extend({
   .thumbnail {
     background-color: #aaaaaa;
     border-radius: 50%;
-    height: 200px;
+    height: 150px;
     margin-left: 60px;
-    width: 200px;
+    width: 150px;
   }
 }
 </style>
