@@ -29,6 +29,11 @@ export default Vue.extend({
       // eslint-disable-next-line no-console
       console.log(e);
     }
+  },
+  head() {
+    return {
+      title: "BLOG"
+    };
   }
 });
 </script>

@@ -38,6 +38,12 @@ export default Vue.extend({
     postsNewArrival(): SortPostsData {
       return (this as any).posts.slice(0, this.limit);
     }
+  },
+  head() {
+    return {
+      title: "Yuta Takahashi",
+      titleTemplate: ""
+    };
   }
 });
 </script>

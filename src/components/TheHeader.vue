@@ -4,7 +4,7 @@
     <nav>
       <ul>
         <li><nuxt-link to="/blog">BLOG</nuxt-link></li>
-        <li>WORKS</li>
+        <li><nuxt-link to="/works">WORKS</nuxt-link></li>
       </ul>
     </nav>
   </header>

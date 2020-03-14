@@ -32,6 +32,11 @@ export default Vue.extend({
   },
   mounted(): void {
     Prism.highlightAll();
+  },
+  head() {
+    return {
+      title: (this as any).post.title
+    };
   }
 });
 </script>
