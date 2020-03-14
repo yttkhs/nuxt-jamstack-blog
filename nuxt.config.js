@@ -53,7 +53,6 @@ export default {
   ],
   modules: [
     "@nuxtjs/axios",
-    "@nuxtjs/pwa",
     "@nuxtjs/dotenv",
     "@nuxtjs/style-resources",
     "@nuxtjs/markdownit",
