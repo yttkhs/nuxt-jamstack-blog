@@ -101,7 +101,7 @@ export default {
           content_type: process.env.CTF_BLOG_POST_TYPE_ID
         })
         .then((posts) => {
-          return posts.items.map((post) => `/posts/${post.fields.slug}`);
+          return posts.items.map((post) => `/blog/${post.fields.slug}`);
         });
     }
   },
