@@ -1,11 +1,6 @@
 <template>
   <main>
     <article>
-      <h1 class="heading">{{ post.title }}</h1>
-      <div class="info">
-        <time class="time">{{ post.createdAt }}</time>
-        <span class="category">{{ post.category.fields.name }}</span>
-      </div>
       <!-- eslint-disable -->
       <div class="contents" v-html="$md.render(post.content)"></div>
     </article>
