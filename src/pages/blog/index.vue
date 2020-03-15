@@ -1,6 +1,7 @@
 <template>
   <main>
-    <SectionBlog :posts="allPosts" />
+    <div>{{ posts }}</div>
+    <SectionBlog :posts="posts" />
   </main>
 </template>
 
@@ -9,7 +10,6 @@ import Vue from "vue";
 import { Context } from "@nuxt/types";
 import SectionBlog from "~/components/SectionBlog.vue";
 import client from "~/plugins/contentful";
-import { SortPostsData } from "~/plugins/sortPostsData";
 
 export default Vue.extend({
   name: "Blog",
@@ -29,11 +29,6 @@ export default Vue.extend({
     } catch (e) {
       // eslint-disable-next-line no-console
       console.log(e);
-    }
-  },
-  computed: {
-    allPosts(): SortPostsData {
-      return (this as any).posts;
     }
   },
   head() {
