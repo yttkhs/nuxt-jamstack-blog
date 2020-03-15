@@ -1,7 +1,22 @@
 <template>
   <main>
     <div>{{ allPosts }}</div>
-    <SectionBlog :posts="allPosts" />
+    <section class="SectionBlog">
+      <h2 class="heading">BLOG</h2>
+      <ul class="post-list">
+        <li v-for="post in allPosts" :key="post.id" class="post">
+          <nuxt-link
+            :to="{ name: 'blog-slug', params: { slug: post.slug, post: post } }"
+            class="title"
+            >{{ post.title }}</nuxt-link
+          >
+          <div class="info">
+            <time class="time">{{ post.createdAt }}</time>
+            <span class="category">{{ post.category.fields.name }}</span>
+          </div>
+        </li>
+      </ul>
+    </section>
   </main>
 </template>
 
@@ -14,9 +29,6 @@ import { SortPostsData } from "~/plugins/sortPostsData";
 
 export default Vue.extend({
   name: "Blog",
-  components: {
-    SectionBlog
-  },
   async asyncData(ctx: Context) {
     try {
       const { items } = await client.getEntries({
