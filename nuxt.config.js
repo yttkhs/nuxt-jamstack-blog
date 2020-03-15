@@ -105,6 +105,9 @@ export default {
         });
     }
   },
+  dotenv: {
+    path: process.cwd()
+  },
   env: {
     CTF_SPACE_ID: process.env.CTF_SPACE_ID,
     CTF_BLOG_POST_TYPE_ID: process.env.CTF_BLOG_POST_TYPE_ID,
