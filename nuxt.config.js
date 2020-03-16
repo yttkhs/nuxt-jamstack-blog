@@ -98,10 +98,16 @@ export default {
     routes() {
       return client
         .getEntries({
-          content_type: process.env.CTF_BLOG_POST_TYPE_ID
+          content_type: process.env.CTF_BLOG_POST_TYPE_ID,
+          order: "-sys.createdAt"
         })
         .then((posts) => {
-          return posts.items.map((post) => `/blog/${post.fields.slug}`);
+          return posts.items.map(function(post) {
+            return {
+              route: `/blog/${post.fields.slug}`,
+              payload: post
+            };
+          });
         });
     }
   },
