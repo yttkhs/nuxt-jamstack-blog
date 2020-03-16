@@ -104,8 +104,7 @@ export default {
         .then((posts) => {
           return posts.items.map(function(post) {
             return {
-              route: `/blog/${post.fields.slug}`,
-              payload: post
+              route: `/blog/${post.fields.slug}`
             };
           });
         });
