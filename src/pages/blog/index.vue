@@ -1,6 +1,5 @@
 <template>
   <main>
-    <div>{{ allPosts }}</div>
     <SectionBlog :posts="posts" />
   </main>
 </template>
@@ -9,7 +8,7 @@
 import Vue from "vue";
 import { Context } from "@nuxt/types";
 import SectionBlog from "~/components/SectionBlog.vue";
-import client from "~/plugins/contentful";
+import contentful from "~/plugins/contentful";
 import { SortPostsData } from "~/plugins/sortPostsData";
 
 export default Vue.extend({
@@ -17,7 +16,7 @@ export default Vue.extend({
   components: { SectionBlog },
   async asyncData(ctx: Context) {
     try {
-      const { items } = await client.getEntries({
+      const { items } = await contentful.getEntries({
         content_type: ctx.env.CTF_BLOG_POST_TYPE_ID,
         order: "-sys.createdAt"
       });
@@ -27,7 +26,7 @@ export default Vue.extend({
       };
     } catch (e) {
       // eslint-disable-next-line no-console
-      console.log(e);
+      console.error(e);
     }
   },
   computed: {

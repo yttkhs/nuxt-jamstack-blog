@@ -8,7 +8,7 @@
 <script lang="ts">
 import Vue from "vue";
 import { Context } from "@nuxt/types";
-import client from "~/plugins/contentful";
+import contentful from "~/plugins/contentful";
 import SectionProfile from "~/components/SectionProfile.vue";
 import SectionBlog from "~/components/SectionBlog.vue";
 import { SortPostsData } from "~/plugins/sortPostsData.ts";
@@ -18,17 +18,20 @@ export default Vue.extend({
   components: { SectionProfile, SectionBlog },
   async asyncData(ctx: Context) {
     try {
-      const { items } = await client.getEntries({
+      const { items } = await contentful.getEntries({
         content_type: ctx.env.CTF_BLOG_POST_TYPE_ID,
         order: "-sys.createdAt"
       });
+
+      // eslint-disable-next-line no-console
+      console.log(items);
 
       return {
         posts: ctx.$sortPostsData(items)
       };
     } catch (e) {
       // eslint-disable-next-line no-console
-      console.log(e);
+      console.error(e);
     }
   },
   data: () => ({
