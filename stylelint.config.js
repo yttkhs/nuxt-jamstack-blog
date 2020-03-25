@@ -22,7 +22,7 @@ module.exports = {
     "declaration-colon-space-after": "always",
     "number-leading-zero": "always",
     "function-url-quotes": "always",
-    "font-weight-notation": "named-where-possible",
+    "font-weight-notation": "numeric",
     "font-family-name-quotes": "always-where-recommended",
     "comment-whitespace-inside": "always",
     "comment-empty-line-before": "always",

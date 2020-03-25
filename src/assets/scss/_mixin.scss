@@ -1,31 +1,3 @@
-@mixin ContentHeading($number) {
-  @include MQ("pc") {
-    $size: 28px;
-    $height: 38px;
-    $calc-size: calc(#{$size} - (2px * #{$number}));
-    $calc-height: calc(#{$height} - (2px * #{$number}));
-
-    font-size: $calc-size;
-    font-weight: bold;
-    line-height: $calc-height;
-    margin-bottom: $calc-height;
-    margin-top: calc(#{$calc-height} + 20px);
-  }
-
-  @include MQ("sp") {
-    $size: 24px;
-    $height: 34px;
-    $calc-size: calc(#{$size} - (2px * #{$number}));
-    $calc-height: calc(#{$height} - (2px * #{$number}));
-
-    font-size: $calc-size;
-    font-weight: bold;
-    line-height: $calc-height;
-    margin-bottom: $calc-height;
-    margin-top: calc(#{$calc-height} + 20px);
-  }
-}
-
 @mixin MQ($devise, $breakpoint: 600px) {
   @if ($devise == "pc") {
     @media print, screen and (min-width: $breakpoint) {

@@ -9,7 +9,19 @@ declare module "@nuxt/types" {
 }
 
 export interface SortPostsData {
-  [key: string]: string | number | undefined;
+  id: number;
+  postId: string;
+  category: {
+    slug: string;
+    name: string;
+  };
+  title: string;
+  content: string;
+  futured?: string;
+  slug: string;
+  thumbnail?: any;
+  createdAt: string;
+  updatedAt: string;
 }
 
 const sortPostsData: Plugin = (context) => {
@@ -18,7 +30,7 @@ const sortPostsData: Plugin = (context) => {
       (item: Entry<any>, index: number): SortPostsData => ({
         id: index,
         postId: item.sys.id,
-        category: item.fields.category,
+        category: item.fields.category.fields,
         title: item.fields.title,
         content: item.fields.content,
         futured: item.fields.futured,

@@ -1,12 +1,8 @@
 <template>
-  <header>
-    <nuxt-link to="/" class="logo">YUTA TAKAHASHI</nuxt-link>
-    <nav>
-      <ul>
-        <li><nuxt-link to="/blog">BLOG</nuxt-link></li>
-        <li><nuxt-link to="/works">WORKS</nuxt-link></li>
-      </ul>
-    </nav>
+  <header class="TheHeader">
+    <nuxt-link to="/" class="logo">
+      <img src="../assets/images/logo.svg" alt="U's Dev Blog" />
+    </nuxt-link>
   </header>
 </template>
 
@@ -19,70 +15,18 @@ export default Vue.extend({
 </script>
 
 <style scoped lang="scss">
-header {
+.TheHeader {
   align-items: center;
+  background-color: $COLOR_PRIMARY;
+  border-bottom: 1px solid $COLOR_SECONDARY;
   display: flex;
-  justify-content: space-between;
-  margin-left: auto;
-  margin-right: auto;
+  height: 70px;
+  justify-content: center;
+  width: 100%;
 
-  @include MQ("pc") {
-    height: $HEADER_HEADER;
-    max-width: $CONTENTS_WIDTH;
-    padding-left: 30px;
-    padding-right: 30px;
-  }
-
-  @include MQ("sp") {
-    height: $HEADER_HEADER - 30px;
-    padding-left: 20px;
-    padding-right: 20px;
-  }
-}
-
-.logo {
-  font-weight: bold;
-  line-height: 100%;
-  text-decoration: none;
-
-  @include MQ("pc") {
-    font-size: 16px;
-  }
-
-  @include MQ("sp") {
-    font-size: 14px;
-  }
-}
-
-nav {
-  ul {
-    display: flex;
-
-    li {
-      line-height: 100%;
-
-      @include MQ("pc") {
-        font-size: 16px;
-      }
-
-      @include MQ("sp") {
-        font-size: 14px;
-      }
-
-      &:not(:first-of-type) {
-        @include MQ("pc") {
-          margin-left: 30px;
-        }
-
-        @include MQ("sp") {
-          margin-left: 15px;
-        }
-      }
-
-      a {
-        text-decoration: none;
-      }
-    }
+  .logo {
+    height: 30px;
+    margin-top: 4px;
   }
 }
 </style>

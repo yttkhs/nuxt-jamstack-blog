@@ -1,7 +1,7 @@
 <template>
   <main class="container">
     <div class="contents">
-      <NavBreadcrumb />
+      <NavBreadcrumb :data="breadcrumb" />
       <NavCategory :data="categories" />
       <ul>
         <CardPost
@@ -35,6 +35,20 @@ export default Vue.extend({
     posts: [] as SortPostsData[],
     categories: [] as string[]
   }),
+  computed: {
+    breadcrumb() {
+      return [
+        {
+          name: "HOME",
+          url: "/"
+        },
+        {
+          name: this.$route.params.category.toUpperCase(),
+          url: this.$route.params
+        }
+      ];
+    }
+  },
   head() {
     return {
       title: "Yuta Takahashi",

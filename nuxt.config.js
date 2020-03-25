@@ -44,6 +44,8 @@ export default {
   plugins: [
     "~/plugins/contentful",
     "~/plugins/sortPostsData.ts",
+    "~/plugins/sortCategoriesData.ts",
+    "~/plugins/fetchContentfulData.ts",
     "~/plugins/prism.ts"
   ],
   buildModules: [
@@ -98,15 +100,13 @@ export default {
     routes() {
       return client
         .getEntries({
-          content_type: process.env.CTF_BLOG_POST_TYPE_ID,
+          content_type: process.env.CTF_POST_TYPE_ID,
           order: "-sys.createdAt"
         })
         .then((posts) => {
-          return posts.items.map(function(post) {
-            return {
-              route: `/blog/${post.fields.slug}`
-            };
-          });
+          return posts.items.map((post) => ({
+            route: `/blog/${post.fields.slug}`
+          }));
         });
     }
   },
@@ -115,7 +115,8 @@ export default {
   },
   env: {
     CTF_SPACE_ID: process.env.CTF_SPACE_ID,
-    CTF_BLOG_POST_TYPE_ID: process.env.CTF_BLOG_POST_TYPE_ID,
+    CTF_POST_TYPE_ID: process.env.CTF_POST_TYPE_ID,
+    CTF_CATEGORY_TYPE_ID: process.env.CTF_CATEGORY_TYPE_ID,
     CTF_CDA_ACCESS_TOKEN: process.env.CTF_CDA_ACCESS_TOKEN
   }
 };
