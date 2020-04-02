@@ -102,7 +102,7 @@ export default {
         })
         .then((posts) => {
           return posts.items.map((post) => ({
-            route: `/${post.fields.category.fields.name}/${post.fields.slug}`
+            route: `/${post.fields.category.fields.slug}/${post.fields.slug}`
           }));
         });
     }
