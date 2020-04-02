@@ -95,16 +95,29 @@ export default {
   generate: {
     fallback: true,
     routes() {
-      return client
-        .getEntries({
+      return Promise.all([
+        client.getEntries({
           content_type: process.env.CTF_POST_TYPE_ID,
           order: "-sys.createdAt"
+        }),
+        client.getEntries({
+          content_type: process.env.CTF_CATEGORY_TYPE_ID,
+          order: "-sys.createdAt"
         })
-        .then((posts) => {
-          return posts.items.map((post) => ({
-            route: `/${post.fields.category.fields.slug}/${post.fields.slug}`
-          }));
+      ]).then(([posts, categories]) => {
+        const post = posts.items.map((post) => {
+          return `/${post.fields.category.fields.slug}/${post.fields.slug}`;
         });
+
+        const category = categories.items.map((category) => {
+          return `/${category.fields.slug}`;
+        });
+
+        return {
+          post,
+          category
+        };
+      });
     }
   },
   dotenv: {
