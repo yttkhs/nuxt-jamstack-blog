@@ -17,24 +17,41 @@
             </TagPostCategory>
           </div>
           <!-- eslint-disable vue/no-v-html -->
-          <div
+          <SectionPostArticle
             class="PostDetails__article"
             v-html="$md.render(post.content)"
-          ></div>
+          ></SectionPostArticle>
           <div class="ButtonTwitterFollow">
-            <a href="">@imatchaproをフォロー</a>
+            <a
+              href="https://twitter.com/intent/follow?screen_name=imatchapro"
+              target="_blank"
+              rel="noopener"
+              >@imatchaproをフォロー</a
+            >
           </div>
-          <section class="SectionShareSns">
-            <h4 class="SectionShareSns__title">SHARE</h4>
-            <nav class="SectionShareSns__nav">
-              <ul>
-                <li><a href=""></a></li>
-                <li><a href=""></a></li>
-                <li><a href=""></a></li>
-              </ul>
-            </nav>
-          </section>
         </div>
+        <section class="SectionShareSns">
+          <h4 class="SectionShareSns__title">SHARE</h4>
+          <nav class="SectionShareSns__nav">
+            <ul>
+              <li>
+                <a href="">
+                  <img src="../../assets/images/twitter.svg" alt="twitter" />
+                </a>
+              </li>
+              <li>
+                <a href="">
+                  <img src="../../assets/images/facebook.svg" alt="facebook" />
+                </a>
+              </li>
+              <li>
+                <a href="">
+                  <img src="../../assets/images/copy.svg" alt="copy" />
+                </a>
+              </li>
+            </ul>
+          </nav>
+        </section>
       </article>
     </div>
     <aside class="sidebar">

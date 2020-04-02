@@ -1,5 +1,84 @@
 @import "../variable";
 
+.ButtonTwitterFollow {
+  margin-top: 30px;
+
+  a {
+    background-color: $COLOR_SECONDARY;
+    border-radius: 5px;
+    color: $COLOR_WHITE;
+    display: inline-block;
+    font-size: 14px;
+    line-height: 14px;
+    padding: 13px 15px 13px 45px;
+    position: relative;
+
+    &::before {
+      background-image: url("../../images/twitter.svg");
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+      content: "";
+      height: 16.5px;
+      left: 15px;
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 20px;
+    }
+  }
+}
+
+.SectionShareSns {
+  align-items: center;
+  background-color: $COLOR_PRIMARY;
+  display: flex;
+  justify-content: center;
+  padding-bottom: 40px;
+  padding-top: 40px;
+
+  &__title {
+    border-right: 1px solid $COLOR_SECONDARY;
+    color: $COLOR_WHITE;
+    font-size: 18px;
+    letter-spacing: 0.1em;
+    line-height: 40px;
+    margin-right: 30px;
+    padding-right: 30px;
+  }
+
+  &__nav {
+    ul {
+      align-items: center;
+      display: flex;
+
+      li {
+        border: 1px solid $COLOR_SECONDARY;
+        border-radius: 50%;
+        height: 40px;
+        width: 40px;
+
+        &:not(:first-of-type) {
+          margin-left: 10px;
+        }
+
+        a {
+          align-items: center;
+          display: flex;
+          height: 100%;
+          justify-content: center;
+          width: 100%;
+
+          img {
+            height: auto;
+            width: 20px;
+          }
+        }
+      }
+    }
+  }
+}
+
 .PostDetails {
   background-color: $COLOR_WHITE;
   border: 1px solid $COLOR_SECONDARY;
@@ -52,173 +131,5 @@
 
   &__article {
     margin-top: 40px;
-
-    & ::v-deep {
-      h1,
-      h2,
-      h3,
-      h4,
-      h5,
-      h6 {
-        color: $COLOR_PRIMARY;
-        font-weight: 500;
-        letter-spacing: 0.1em;
-      }
-
-      h1,
-      h2 {
-        font-size: 22px;
-        line-height: 38px;
-        margin-bottom: 20px;
-        margin-top: 50px;
-        padding-left: 25px;
-        position: relative;
-
-        &::before {
-          background-color: $COLOR_PRIMARY;
-          border-radius: 3px;
-          content: "";
-          height: 100%;
-          left: 0;
-          position: absolute;
-          top: 0;
-          width: 5px;
-        }
-      }
-
-      h3 {
-        font-size: 20px;
-        line-height: 36px;
-        margin-bottom: 20px;
-        margin-top: 40px;
-        padding-left: 25px;
-        position: relative;
-
-        &::before,
-        &::after {
-          border-radius: 50%;
-          content: "";
-          position: absolute;
-          top: 50%;
-        }
-
-        &::before {
-          background-color: $COLOR_PRIMARY;
-          height: 10px;
-          left: 0;
-          position: absolute;
-          top: 50%;
-          transform: translateY(-50%);
-          width: 10px;
-        }
-
-        &::after {
-          background-color: $COLOR_WHITE;
-          height: 5px;
-          left: 5px;
-          position: absolute;
-          top: 50%;
-          transform: translate(-50%, -50%);
-          width: 5px;
-        }
-      }
-
-      h4 {
-        font-size: 18px;
-        line-height: 34px;
-        margin-bottom: 10px;
-        margin-top: 30px;
-      }
-
-      h5,
-      h6 {
-        font-size: 16px;
-        line-height: 32px;
-        margin-bottom: 10px;
-        margin-top: 20px;
-      }
-
-      p {
-        color: $COLOR_PRIMARY;
-        font-size: 16px;
-        letter-spacing: 0.1em;
-        line-height: 32px;
-
-        & + p {
-          margin-top: 15px;
-        }
-
-        strong {
-          font-weight: 600;
-        }
-
-        em {
-          font-style: italic;
-        }
-      }
-
-      blockquote {
-        margin-top: 15px;
-
-        p {
-          color: $COLOR_GRAY;
-          font-size: 14px;
-          line-height: 30px;
-          padding-left: 25px;
-          position: relative;
-
-          &::before {
-            background-color: $COLOR_GRAY;
-            content: "";
-            height: 100%;
-            left: 0;
-            position: absolute;
-            top: 0;
-            width: 3px;
-          }
-        }
-      }
-
-      ul,
-      ol {
-        margin-top: 15px;
-
-        li {
-          color: $COLOR_PRIMARY;
-          font-size: 16px;
-          line-height: 32px;
-          padding-left: 15px;
-          position: relative;
-
-          &::before {
-            background-color: $COLOR_PRIMARY;
-            border-radius: 50%;
-            content: "";
-            height: 5px;
-            left: 0;
-            position: absolute;
-            top: 50%;
-            transform: translateY(-50%);
-            width: 5px;
-          }
-        }
-      }
-
-      pre {
-        border-radius: 5px;
-        margin: 30px 0 0 0;
-
-        code {
-          font-size: 14px;
-          line-height: 24px;
-        }
-      }
-
-      * {
-        &:first-child {
-          margin-top: 0;
-        }
-      }
-    }
   }
 }
