@@ -1,0 +1,70 @@
+@import "../variable";
+
+.CardProfile {
+  background-color: $COLOR_PRIMARY;
+  border: 1px solid $COLOR_SECONDARY;
+  border-radius: 10px;
+  padding: 30px;
+  width: 100%;
+
+  &__details {
+    align-items: center;
+    display: flex;
+  }
+
+  &__thumb {
+    background-color: $COLOR_SECONDARY;
+    border-radius: 50%;
+    height: 60px;
+    width: 60px;
+  }
+
+  &__name {
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 30px;
+    margin-left: 25px;
+  }
+
+  &__desc {
+    font-size: 14px;
+    letter-spacing: 0.1em;
+    line-height: 25px;
+    margin-top: 25px;
+  }
+
+  &__sns {
+    margin-top: 25px;
+
+    ul {
+      align-items: center;
+      display: flex;
+      justify-content: center;
+
+      li {
+        &:not(:first-of-type) {
+          margin-left: 10px;
+        }
+
+        a {
+          background-color: $COLOR_PRIMARY;
+          border: 1px solid $COLOR_SECONDARY;
+          border-radius: 50%;
+          display: block;
+          height: 40px;
+          position: relative;
+          width: 40px;
+
+          img {
+            height: auto;
+            left: 50%;
+            position: absolute;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            width: 20px;
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,4 +1,5 @@
 require("dotenv").config();
+const path = require("path");
 const contentful = require("contentful");
 const config = require("./.contentful.json");
 const client = contentful.createClient({
@@ -56,7 +57,6 @@ export default {
   modules: [
     "@nuxtjs/axios",
     "@nuxtjs/dotenv",
-    "@nuxtjs/style-resources",
     "@nuxtjs/markdownit",
     "nuxt-webfontloader"
   ],
@@ -66,9 +66,6 @@ export default {
     html: true,
     linkify: true,
     typography: true
-  },
-  styleResources: {
-    scss: ["~/assets/scss/_variable.scss", "~/assets/scss/_mixin.scss"]
   },
   webfontloader: {
     google: {
@@ -112,6 +109,14 @@ export default {
   },
   dotenv: {
     path: process.cwd()
+  },
+  resolve: {
+    extensions: [".js", ".json", ".vue", ".ts"],
+    root: path.resolve(__dirname),
+    alias: {
+      "@": path.resolve(__dirname),
+      "~": path.resolve(__dirname)
+    }
   },
   env: {
     CTF_SPACE_ID: process.env.CTF_SPACE_ID,

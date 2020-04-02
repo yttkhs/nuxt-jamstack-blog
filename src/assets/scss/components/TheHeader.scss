@@ -1,0 +1,16 @@
+@import "../variable";
+
+.TheHeader {
+  align-items: center;
+  background-color: $COLOR_PRIMARY;
+  border-bottom: 1px solid $COLOR_SECONDARY;
+  display: flex;
+  height: 70px;
+  justify-content: center;
+  width: 100%;
+
+  .logo {
+    height: 30px;
+    margin-top: 4px;
+  }
+}

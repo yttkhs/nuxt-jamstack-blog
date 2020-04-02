@@ -1,0 +1,13 @@
+.TheFooter {
+  align-items: center;
+  display: flex;
+  height: 60px;
+  justify-content: center;
+  width: 100%;
+
+  &__copyright {
+    font-size: 12px;
+    letter-spacing: 0.1em;
+    line-height: 12px;
+  }
+}

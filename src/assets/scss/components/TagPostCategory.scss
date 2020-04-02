@@ -1,0 +1,11 @@
+@import "../variable";
+
+.TagPostCategory {
+  background-color: $COLOR_SECONDARY;
+  border-radius: 5px;
+  display: inline-block;
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 12px;
+  padding: 9px 15px;
+}
