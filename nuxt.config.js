@@ -114,7 +114,7 @@ export default {
           return `/${category.fields.slug}`;
         });
 
-        return [...post, ...category];
+        return post.concat(category);
       });
     }
   },
