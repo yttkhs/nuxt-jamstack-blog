@@ -94,6 +94,7 @@ export default {
   },
   generate: {
     fallback: true,
+    subFolders: false,
     routes() {
       return Promise.all([
         client.getEntries({
@@ -113,10 +114,7 @@ export default {
           return `/${category.fields.slug}`;
         });
 
-        return {
-          post,
-          category
-        };
+        return [...post, ...category];
       });
     }
   },
