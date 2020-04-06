@@ -96,25 +96,34 @@ export default {
     fallback: true,
     subFolders: false,
     routes() {
-      return Promise.all([
-        client.getEntries({
+      const posts = client
+        .getEntries({
           content_type: process.env.CTF_POST_TYPE_ID,
           order: "-sys.createdAt"
-        }),
-        client.getEntries({
+        })
+        .then((entries) => {
+          return entries.items.map((entry) => {
+            return {
+              route: `/${entry.fields.category.fields.slug}/${entry.fields.slug}`
+            };
+          });
+        });
+
+      const categories = client
+        .getEntries({
           content_type: process.env.CTF_CATEGORY_TYPE_ID,
           order: "-sys.createdAt"
         })
-      ]).then(([posts, categories]) => {
-        const post = posts.items.map((post) => {
-          return `/${post.fields.category.fields.slug}/${post.fields.slug}`;
+        .then((entries) => {
+          return entries.items.map((entry) => {
+            return {
+              route: `/${entry.fields.slug}`
+            };
+          });
         });
 
-        const category = categories.items.map((category) => {
-          return `/${category.fields.slug}`;
-        });
-
-        return post.concat(category);
+      return Promise.all([posts, categories]).then((values) => {
+        return [...values[0], values[1]];
       });
     }
   },
