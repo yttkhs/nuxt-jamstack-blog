@@ -3,11 +3,7 @@
     <div class="contents">
       <NavBreadcrumb :data="breadcrumb" />
       <article class="PostDetails">
-        <figure class="PostDetails__thumb">
-          <template v-if="!post.thumbnail === undefined">
-            <img :src="post.thumbnail" alt="" />
-          </template>
-        </figure>
+        <figure class="PostDetails__thumb"></figure>
         <div class="PostDetails__contents">
           <div class="PostDetails__head">
             <time class="PostDetails__time" :datetime="post.createdAt">
