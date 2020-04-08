@@ -1,17 +1,16 @@
 <template>
   <main class="container">
     <div class="contents">
-      <div>{{ test }}</div>
       <NavBreadcrumb :data="breadcrumb" />
       <article class="PostDetails">
         <figure class="PostDetails__thumb">
-          <template v-if="post.thumbnail">
-            <img :src="post.thumbnail" alt="" />
+          <template v-if="data.thumbnail">
+            <img :src="data.thumbnail" alt="" />
           </template>
         </figure>
         <div class="PostDetails__contents">
           <div class="PostDetails__head">
-            <time class="PostDetails__time" :datetime="post.createdAt">
+            <time class="PostDetails__time" :datetime="data.createdAt">
               {{ post.createdAt }}
             </time>
             <h1 class="PostDetails__title">{{ post.title }}</h1>
@@ -22,7 +21,7 @@
           <!-- eslint-disable vue/no-v-html -->
           <SectionPostArticle
             class="PostDetails__article"
-            v-html="$md.render(post.content)"
+            v-html="$md.render(data.content)"
           ></SectionPostArticle>
           <div class="ButtonTwitterFollow">
             <a

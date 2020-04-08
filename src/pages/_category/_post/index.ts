@@ -1,4 +1,4 @@
-import Vue from "vue";
+import Vue, { PropType } from "vue";
 import { Context } from "@nuxt/types";
 import Prism from "~/plugins/prism";
 import CardProfile from "~/components/CardProfile.vue";
@@ -15,16 +15,12 @@ export default Vue.extend({
     TagPostCategory,
     SectionPostArticle
   },
-  asyncData(ctx: Context) {
-    return {
-      post: ctx.params.data,
-      test: ctx.payload
-    };
+  props: {
+    data: {
+      type: Object as PropType<SortPostsData>,
+      required: true
+    }
   },
-  data: () => ({
-    post: {} as SortPostsData,
-    test: {}
-  }),
   computed: {
     breadcrumb() {
       return [
