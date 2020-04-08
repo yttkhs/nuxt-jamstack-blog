@@ -11,11 +11,11 @@
         <div class="PostDetails__contents">
           <div class="PostDetails__head">
             <time class="PostDetails__time" :datetime="data.createdAt">
-              {{ post.createdAt }}
+              {{ data.createdAt }}
             </time>
             <h1 class="PostDetails__title">{{ post.title }}</h1>
             <TagPostCategory class="PostDetails__category">
-              {{ post.category.name }}
+              {{ data.category.name }}
             </TagPostCategory>
           </div>
           <!-- eslint-disable vue/no-v-html -->
