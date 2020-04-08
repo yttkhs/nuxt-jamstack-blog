@@ -6,5 +6,5 @@
   </header>
 </template>
 
-<script lang="ts" src="../assets/ts/components/TheHeader.ts" />
-<style scoped lang="scss" src="../assets/scss/components/TheHeader.scss" />
+<script lang="ts" src="./TheHeader.ts" />
+<style scoped lang="scss" src="./TheHeader.scss" />

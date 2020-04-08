@@ -27,5 +27,5 @@
   </li>
 </template>
 
-<script lang="ts" src="../assets/ts/components/CardPost.ts" />
-<style scoped lang="scss" src="../assets/scss/components/CardPost.scss" />
+<script lang="ts" src="./CardPost.ts" />
+<style scoped lang="scss" src="./CardPost.scss" />

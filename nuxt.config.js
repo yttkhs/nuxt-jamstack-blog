@@ -87,7 +87,9 @@ export default {
         }
       }
     },
-    extend(config, ctx) {}
+    extend(config, ctx) {
+      config.devtool = ctx.isClient ? "eval-source-map" : "inline-source-map";
+    }
   },
   router: {
     base: baseDir
@@ -104,7 +106,8 @@ export default {
         .then((entries) => {
           return entries.items.map((entry) => {
             return {
-              route: `/${entry.fields.category.fields.slug}/${entry.fields.slug}`
+              route: `/${entry.fields.category.fields.slug}/${entry.fields.slug}`,
+              payload: entry
             };
           });
         });
@@ -117,7 +120,8 @@ export default {
         .then((entries) => {
           return entries.items.map((entry) => {
             return {
-              route: `/${entry.fields.slug}`
+              route: `/${entry.fields.slug}`,
+              payload: entry
             };
           });
         });

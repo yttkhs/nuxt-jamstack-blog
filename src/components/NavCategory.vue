@@ -16,5 +16,5 @@
   </nav>
 </template>
 
-<script lang="ts" src="../assets/ts/components/NavCategory.ts" />
-<style scoped lang="scss" src="../assets/scss/components/NavCategory.scss" />
+<script lang="ts" src="./NavCategory.ts" />
+<style scoped lang="scss" src="./NavCategory.scss" />

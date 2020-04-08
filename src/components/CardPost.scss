@@ -1,4 +1,4 @@
-@import "../variable";
+@import "../assets/scss/variable";
 
 .CardPost {
   background-color: $COLOR_PRIMARY;
@@ -39,7 +39,7 @@
     position: relative;
 
     &::before {
-      background-image: url("../../images/time_wh.svg");
+      background-image: url("../assets/images/time_wh.svg");
       content: "";
       height: 15px;
       left: 0;

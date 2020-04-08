@@ -18,5 +18,5 @@
   </main>
 </template>
 
-<script lang="ts" src="../../assets/ts/pages/category.ts" />
-<style scoped lang="scss" src="../../assets/scss/pages/category.scss" />
+<script lang="ts" src="./index.ts" />
+<style scoped lang="scss" src="./index.scss" />

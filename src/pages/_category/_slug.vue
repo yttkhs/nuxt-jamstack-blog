@@ -60,5 +60,5 @@
   </main>
 </template>
 
-<script lang="ts" src="../../assets/ts/pages/category-slug.ts"></script>
-<style scoped lang="scss" src="../../assets/scss/pages/category-slug.scss" />
+<script lang="ts" src="./_slug.ts"></script>
+<style scoped lang="scss" src="./_slug.scss" />

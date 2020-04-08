@@ -12,5 +12,5 @@
   </nav>
 </template>
 
-<script lang="ts" src="../assets/ts/components/NavBreadcrumb.ts" />
-<style scoped lang="scss" src="../assets/scss/components/NavBreadcrumb.scss" />
+<script lang="ts" src="./NavBreadcrumb.ts" />
+<style scoped lang="scss" src="./NavBreadcrumb.scss" />

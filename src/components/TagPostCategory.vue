@@ -4,9 +4,5 @@
   </div>
 </template>
 
-<script lang="ts" src="../assets/ts/components/TagPostCategory.ts" />
-<style
-  scoped
-  lang="scss"
-  src="../assets/scss/components/TagPostCategory.scss"
-/>
+<script lang="ts" src="./TagPostCategory.ts" />
+<style scoped lang="scss" src="./TagPostCategory.scss" />

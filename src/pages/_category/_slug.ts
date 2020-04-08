@@ -17,7 +17,8 @@ export default Vue.extend({
   },
   asyncData(ctx: Context) {
     return {
-      post: ctx.params.data
+      post: ctx.params.data,
+      test: ctx.payload
     };
   },
   data: () => ({
@@ -29,14 +30,6 @@ export default Vue.extend({
         {
           name: "HOME",
           url: "/"
-        },
-        {
-          name: this.post.category.name,
-          url: `/${this.post.category.slug}`
-        },
-        {
-          name: this.post.title,
-          url: `/${this.post.category.slug}/${this.post.slug}`
         }
       ];
     }

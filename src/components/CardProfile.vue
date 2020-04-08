@@ -39,5 +39,5 @@
   </div>
 </template>
 
-<script lang="ts" src="../assets/ts/components/CardProfile.ts" />
-<style scoped lang="scss" src="../assets/scss/components/CardProfile.scss" />
+<script lang="ts" src="./CardProfile.ts" />
+<style scoped lang="scss" src="./CardProfile.scss" />

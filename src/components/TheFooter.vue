@@ -4,5 +4,5 @@
   </footer>
 </template>
 
-<script lang="ts" src="../assets/ts/components/TheFooter.ts" />
-<style scoped lang="scss" src="../assets/scss/components/TheFooter.scss" />
+<script lang="ts" src="./TheFooter.ts" />
+<style scoped lang="scss" src="./TheFooter.scss" />
