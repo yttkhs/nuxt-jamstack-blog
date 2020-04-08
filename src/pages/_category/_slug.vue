@@ -4,7 +4,7 @@
       <NavBreadcrumb :data="breadcrumb" />
       <article class="PostDetails">
         <figure class="PostDetails__thumb">
-          <template v-if="post.thumbnail">
+          <template v-if="!post.thumbnail === undefined">
             <img :src="post.thumbnail" alt="" />
           </template>
         </figure>
