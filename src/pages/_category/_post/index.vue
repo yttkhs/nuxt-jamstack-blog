@@ -1,9 +1,14 @@
 <template>
   <main class="container">
     <div class="contents">
+      <div>{{ test }}</div>
       <NavBreadcrumb :data="breadcrumb" />
       <article class="PostDetails">
-        <figure class="PostDetails__thumb"></figure>
+        <figure class="PostDetails__thumb">
+          <template v-if="post.thumbnail">
+            <img :src="post.thumbnail" alt="" />
+          </template>
+        </figure>
         <div class="PostDetails__contents">
           <div class="PostDetails__head">
             <time class="PostDetails__time" :datetime="post.createdAt">
@@ -34,17 +39,20 @@
             <ul>
               <li>
                 <a href="">
-                  <img src="../../assets/images/twitter.svg" alt="twitter" />
+                  <img src="../../../assets/images/twitter.svg" alt="twitter" />
                 </a>
               </li>
               <li>
                 <a href="">
-                  <img src="../../assets/images/facebook.svg" alt="facebook" />
+                  <img
+                    src="../../../assets/images/facebook.svg"
+                    alt="facebook"
+                  />
                 </a>
               </li>
               <li>
                 <a href="">
-                  <img src="../../assets/images/copy.svg" alt="copy" />
+                  <img src="../../../assets/images/copy.svg" alt="copy" />
                 </a>
               </li>
             </ul>
@@ -58,5 +66,5 @@
   </main>
 </template>
 
-<script lang="ts" src="./_slug.ts"></script>
-<style scoped lang="scss" src="./_slug.scss" />
+<script lang="ts" src="./index.ts"></script>
+<style scoped lang="scss" src="./index.scss" />

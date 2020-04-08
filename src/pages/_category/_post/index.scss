@@ -1,4 +1,4 @@
-@import "../../assets/scss/variable";
+@import "../../../assets/scss/variable";
 
 .ButtonTwitterFollow {
   margin-top: 30px;
@@ -14,7 +14,7 @@
     position: relative;
 
     &::before {
-      background-image: url("../../assets/images/twitter.svg");
+      background-image: url("../../../assets/images/twitter.svg");
       background-position: center;
       background-repeat: no-repeat;
       background-size: cover;
@@ -104,7 +104,7 @@
     position: relative;
 
     &::before {
-      background-image: url("../../assets/images/time_bk.svg");
+      background-image: url("../../../assets/images/time_bk.svg");
       background-position: center;
       content: "";
       height: 15px;

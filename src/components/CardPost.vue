@@ -3,10 +3,10 @@
     <nuxt-link
       class="CardPost__wrapper"
       :to="{
-        name: 'category-slug',
+        name: 'category-post',
         params: {
           category: data.category.slug,
-          slug: data.slug,
+          post: data.slug,
           data: data
         }
       }"

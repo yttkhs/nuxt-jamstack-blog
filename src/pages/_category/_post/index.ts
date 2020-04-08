@@ -22,7 +22,8 @@ export default Vue.extend({
     };
   },
   data: () => ({
-    post: {} as SortPostsData
+    post: {} as SortPostsData,
+    test: {}
   }),
   computed: {
     breadcrumb() {
