@@ -24,7 +24,7 @@ export default Vue.extend({
       });
 
       return {
-        post: ctx.$sortPostsData(post)[0]
+        post: ctx.$sortPostsData(post.items)[0]
       };
     } catch (e) {
       // eslint-disable-next-line no-console
