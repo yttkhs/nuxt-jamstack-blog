@@ -32,7 +32,7 @@ export default Vue.extend({
     }
   },
   data: () => ({
-    post: {} as SortPostsData[]
+    post: {} as SortPostsData
   }),
   computed: {
     breadcrumb() {
