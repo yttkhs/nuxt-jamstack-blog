@@ -126,8 +126,8 @@ export default {
           });
         });
 
-      return Promise.all([posts, categories]).then((values) => {
-        return [...values[0], values[1]];
+      return Promise.all([categories, posts]).then((values) => {
+        return [...values[0], ...values[1]];
       });
     }
   },

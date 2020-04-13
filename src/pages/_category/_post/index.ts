@@ -1,7 +1,8 @@
-import Vue, { PropType } from "vue";
+import Vue from "vue";
 import { Context } from "@nuxt/types";
 import Prism from "~/plugins/prism";
 import CardProfile from "~/components/CardProfile.vue";
+import contentful from "~/plugins/contentful";
 import NavBreadcrumb from "~/components/NavBreadcrumb.vue";
 import TagPostCategory from "~/components/TagPostCategory.vue";
 import SectionPostArticle from "~/components/SectionPostArticle.vue";
@@ -15,12 +16,24 @@ export default Vue.extend({
     TagPostCategory,
     SectionPostArticle
   },
-  props: {
-    data: {
-      type: Object as PropType<SortPostsData>,
-      required: true
+  async asyncData(ctx: Context) {
+    try {
+      const post = await contentful.getEntries({
+        content_type: ctx.env.CTF_POST_TYPE_ID,
+        "fields.slug": ctx.params.post
+      });
+
+      return {
+        post: ctx.$sortPostsData(post)[0]
+      };
+    } catch (e) {
+      // eslint-disable-next-line no-console
+      console.error(e);
     }
   },
+  data: () => ({
+    post: {} as SortPostsData[]
+  }),
   computed: {
     breadcrumb() {
       return [

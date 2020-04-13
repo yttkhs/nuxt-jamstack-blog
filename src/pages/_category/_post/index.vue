@@ -4,24 +4,24 @@
       <NavBreadcrumb :data="breadcrumb" />
       <article class="PostDetails">
         <figure class="PostDetails__thumb">
-          <template v-if="data.thumbnail">
-            <img :src="data.thumbnail" alt="" />
+          <template v-if="post.thumbnail">
+            <img :src="post.thumbnail" alt="" />
           </template>
         </figure>
         <div class="PostDetails__contents">
           <div class="PostDetails__head">
-            <time class="PostDetails__time" :datetime="data.createdAt">
-              {{ data.createdAt }}
+            <time class="PostDetails__time" :datetime="post.createdAt">
+              {{ post.createdAt }}
             </time>
             <h1 class="PostDetails__title">{{ post.title }}</h1>
             <TagPostCategory class="PostDetails__category">
-              {{ data.category.name }}
+              {{ post.category.name }}
             </TagPostCategory>
           </div>
           <!-- eslint-disable vue/no-v-html -->
           <SectionPostArticle
             class="PostDetails__article"
-            v-html="$md.render(data.content)"
+            v-html="$md.render(post.content)"
           ></SectionPostArticle>
           <div class="ButtonTwitterFollow">
             <a

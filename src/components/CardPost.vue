@@ -6,8 +6,7 @@
         name: 'category-post',
         params: {
           category: data.category.slug,
-          post: data.slug,
-          data: data
+          post: data.slug
         }
       }"
     >
