@@ -7,10 +7,12 @@ import NavBreadcrumb from "~/components/NavBreadcrumb.vue";
 import TagPostCategory from "~/components/TagPostCategory.vue";
 import SectionPostArticle from "~/components/SectionPostArticle.vue";
 import { SortPostsData } from "~/plugins/sortPostsData";
+import CardPost from "~/components/CardPost";
 
 export default Vue.extend({
   name: "",
   components: {
+    CardPost,
     CardProfile,
     NavBreadcrumb,
     TagPostCategory,
@@ -18,12 +20,28 @@ export default Vue.extend({
   },
   async asyncData(ctx: Context) {
     try {
-      const post = await contentful.getEntries({
-        content_type: ctx.env.CTF_POST_TYPE_ID,
-        "fields.slug": ctx.params.post
-      });
+      const [posts, post] = await Promise.all([
+        contentful.getEntries({
+          content_type: ctx.env.CTF_POST_TYPE_ID,
+          order: "-sys.createdAt"
+        }),
+        contentful.getEntries({
+          content_type: ctx.env.CTF_POST_TYPE_ID,
+          "fields.slug": ctx.params.post
+        })
+      ]);
+
+      const recommendedPosts = await ctx
+        .$sortPostsData(posts.items)
+        .filter((item: SortPostsData) => {
+          return (
+            ctx.route.params.category === item.category.slug &&
+            ctx.params.post !== item.slug
+          );
+        });
 
       return {
+        posts: recommendedPosts,
         post: ctx.$sortPostsData(post.items)[0]
       };
     } catch (e) {
@@ -32,6 +50,7 @@ export default Vue.extend({
     }
   },
   data: () => ({
+    posts: [] as SortPostsData[],
     post: {} as SortPostsData
   }),
   computed: {
@@ -40,6 +59,14 @@ export default Vue.extend({
         {
           name: "HOME",
           url: "/"
+        },
+        {
+          name: this.post.category.name,
+          url: `/${this.post.category.slug}`
+        },
+        {
+          name: this.post.title,
+          url: `/${this.post.category.slug}/${this.post.slug}`
         }
       ];
     }

@@ -5,6 +5,8 @@
   border: 1px solid $COLOR_SECONDARY;
   border-radius: 10px;
   padding: 30px;
+  position: sticky;
+  top: 30px;
   width: 100%;
 
   &__details {

@@ -58,6 +58,14 @@
           </nav>
         </section>
       </article>
+      <ul v-if="posts.length" class="PostRecommended">
+        <CardPost
+          v-for="item in posts"
+          :key="item.id"
+          :data="item"
+          class="PostItem"
+        />
+      </ul>
     </div>
     <aside class="sidebar">
       <CardProfile />
