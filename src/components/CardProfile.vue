@@ -2,7 +2,7 @@
   <div class="CardProfile">
     <div class="CardProfile__details">
       <figure class="CardProfile__thumb">
-        <img src="" alt="Yuta Takahashi" />
+        <img src="../assets/images/me.jpg" alt="Yuta Takahashi" />
       </figure>
       <p class="CardProfile__name">Yuta<br />Takahashi</p>
     </div>

@@ -18,7 +18,13 @@
     background-color: $COLOR_SECONDARY;
     border-radius: 50%;
     height: 60px;
+    overflow: hidden;
     width: 60px;
+
+    img {
+      height: auto;
+      width: 100%;
+    }
   }
 
   &__name {

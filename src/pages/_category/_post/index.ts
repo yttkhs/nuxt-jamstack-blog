@@ -41,7 +41,7 @@ export default Vue.extend({
         });
 
       return {
-        posts: recommendedPosts,
+        posts: recommendedPosts.slice(0, 2),
         post: ctx.$sortPostsData(post.items)[0]
       };
     } catch (e) {

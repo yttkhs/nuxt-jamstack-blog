@@ -1,11 +1,25 @@
 @import "../assets/scss/variable";
+@import "../assets/scss/_mixin.scss";
 
 .NavBreadcrumb {
   margin-bottom: 30px;
 
+  @include MQ("sm") {
+    margin-bottom: 20px;
+  }
+
   ul {
     align-items: center;
     display: flex;
+
+    @include MQ("sm") {
+      overflow: scroll;
+      -ms-overflow-style: none;
+
+      &::-webkit-scrollbar {
+        display: none;
+      }
+    }
 
     li {
       &:not(:first-of-type) {

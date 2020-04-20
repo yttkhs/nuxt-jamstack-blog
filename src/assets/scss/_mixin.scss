@@ -1,12 +1,20 @@
-@mixin MQ($devise, $breakpoint: 600px) {
-  @if ($devise == "pc") {
-    @media print, screen and (min-width: $breakpoint) {
+@import "variable";
+
+@mixin MQ($size) {
+  @if ($size == "sm") {
+    @media print, screen and (max-width: $sm) {
       @content;
     }
   }
 
-  @else if ($devise == "sp") {
-    @media screen and (max-width: $breakpoint) {
+  @else if ($size == "md") {
+    @media screen and (min-width: $sm) and (max-width: $lg) {
+      @content;
+    }
+  }
+
+  @else if ($size == "lg") {
+    @media screen and (min-width: $lg) {
       @content;
     }
   }
