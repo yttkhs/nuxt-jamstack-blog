@@ -5,7 +5,7 @@
   margin-bottom: 30px;
 
   @include MQ("sm") {
-    margin-bottom: 20px;
+    margin-bottom: 15px;
   }
 
   ul {
@@ -43,6 +43,12 @@
         text-overflow: ellipsis;
         white-space: nowrap;
 
+        @include MQ("sm") {
+          font-size: 10px;
+          line-height: 11px;
+          padding: 9px 10px 9px 11px;
+        }
+
         &.nuxt-link-exact-active {
           font-weight: 700;
         }
@@ -52,6 +58,10 @@
         a {
           padding-left: 36px;
           position: relative;
+
+          @include MQ("sm") {
+            padding-left: 33px;
+          }
 
           &::before {
             background-image: url("../assets/images/home.svg");
@@ -64,6 +74,12 @@
             top: calc(50% - 1px);
             transform: translateY(-50%);
             width: 15px;
+
+            @include MQ("sm") {
+              height: 11px;
+              top: calc(50% - 2px);
+              width: 13px;
+            }
           }
         }
       }

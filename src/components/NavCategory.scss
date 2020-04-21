@@ -1,12 +1,23 @@
-@import "../assets/scss/variable";
+@import "../assets/scss/_variable";
+@import "../assets/scss/_mixin";
 
 .NavCategory {
   margin-bottom: 30px;
   width: 100%;
 
+  @include MQ("sm") {
+    margin-bottom: 15px;
+  }
+
   ul {
     align-items: center;
     display: flex;
+    -ms-overflow-style: none;
+    overflow-x: scroll;
+
+    &::-webkit-scrollbar {
+      display: none;
+    }
 
     li {
       &:not(:first-of-type) {
@@ -24,6 +35,12 @@
         letter-spacing: 0.1em;
         line-height: 14px;
         padding: 12px 20px;
+
+        @include MQ("sm") {
+          font-size: 12px;
+          line-height: 12px;
+          padding: 8px 15px;
+        }
 
         &.nuxt-link-exact-active {
           background-color: $COLOR_WHITE;
