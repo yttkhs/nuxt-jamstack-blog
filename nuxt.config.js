@@ -8,9 +8,9 @@ const client = contentful.createClient({
 });
 
 const lang = "ja";
-const siteName = "Yuta Takahashi";
+const siteName = "U's Dev Blog";
 const siteDesc = "Yuta Takahashi Engineer Blog";
-const siteKeywords = "Frontend,Engineer,Yuta,Takahashi,blog,";
+const siteKeywords = "Frontend,Engineer,U's Dev Blog,Yuta,Takahashi,blog,";
 const baseHost = process.env.BASE_HOST || "http://localhost:3000";
 const baseDir = process.env.BASE_DIR || "/";
 const baseUrl = baseHost + baseDir;

@@ -73,5 +73,20 @@ export default Vue.extend({
   },
   mounted(): void {
     Prism.highlightAll();
+  },
+  head() {
+    return {
+      title: this.post.title,
+      meta: [
+        { hid: "og:title", property: "og:title", content: this.post.title },
+        { hid: "og:type", property: "og:type", content: "article" },
+        {
+          hid: "og:url",
+          property: "og:url",
+          content: `/${this.post.category.slug}/${this.post.slug}`
+        },
+        { hid: "og:image", property: "og:image", content: this.post.thumbnail }
+      ]
+    };
   }
 });

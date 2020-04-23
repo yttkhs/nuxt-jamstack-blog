@@ -30,8 +30,7 @@ export default Vue.extend({
   },
   head() {
     return {
-      title: "Yuta Takahashi",
-      titleTemplate: ""
+      title: this.$route.params.category.toUpperCase()
     };
   }
 });

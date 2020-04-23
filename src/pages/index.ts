@@ -16,8 +16,7 @@ export default Vue.extend({
   }),
   head() {
     return {
-      title: "Yuta Takahashi",
-      titleTemplate: ""
+      title: "Yuta Takahashi"
     };
   }
 });

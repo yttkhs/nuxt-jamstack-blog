@@ -1,4 +1,5 @@
-@import "../assets/scss/variable";
+@import "../assets/scss/_variable";
+@import "../assets/scss/_mixin";
 
 .CardProfile {
   background-color: $COLOR_PRIMARY;
@@ -8,6 +9,10 @@
   position: sticky;
   top: 30px;
   width: 100%;
+
+  @include MQ("sm") {
+    padding: 20px;
+  }
 
   &__details {
     align-items: center;
@@ -32,6 +37,10 @@
     font-weight: 600;
     line-height: 30px;
     margin-left: 25px;
+
+    @include MQ("sm") {
+      margin-left: 20px;
+    }
   }
 
   &__desc {
@@ -39,10 +48,18 @@
     letter-spacing: 0.1em;
     line-height: 25px;
     margin-top: 25px;
+
+    @include MQ("sm") {
+      margin-top: 20px;
+    }
   }
 
   &__sns {
     margin-top: 25px;
+
+    @include MQ("sm") {
+      margin-top: 20px;
+    }
 
     ul {
       align-items: center;

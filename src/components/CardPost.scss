@@ -48,8 +48,17 @@
     padding-left: 25px;
     position: relative;
 
+    @include MQ("sm") {
+      font-size: 12px;
+      margin-top: 15px;
+      padding-left: 22px;
+    }
+
     &::before {
       background-image: url("../assets/images/time_wh.svg");
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: contain;
       content: "";
       height: 15px;
       left: 0;
@@ -57,11 +66,20 @@
       top: 50%;
       transform: translateY(-50%);
       width: 15px;
+
+      @include MQ("sm") {
+        height: 12px;
+        width: 12px;
+      }
     }
   }
 
   &__category {
     margin-top: 20px;
+
+    @include MQ("sm") {
+      margin-top: 15px;
+    }
   }
 
   &__thumb {

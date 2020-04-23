@@ -122,6 +122,11 @@
     padding-left: 25px;
     position: relative;
 
+    @include MQ("sm") {
+      font-size: 12px;
+      padding-left: 22px;
+    }
+
     &::before {
       background-image: url("../../../assets/images/time_bk.svg");
       background-position: center;
@@ -134,6 +139,11 @@
       top: calc(50% - 1px);
       transform: translateY(-50%);
       width: 15px;
+
+      @include MQ("sm") {
+        height: 12px;
+        width: 12px;
+      }
     }
   }
 
