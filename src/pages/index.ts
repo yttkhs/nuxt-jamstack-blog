@@ -13,10 +13,5 @@ export default Vue.extend({
   data: () => ({
     posts: [] as SortPostsData[],
     categories: [] as string[]
-  }),
-  head() {
-    return {
-      title: "Yuta Takahashi"
-    };
-  }
+  })
 });
