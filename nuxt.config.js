@@ -39,7 +39,14 @@ export default {
       { hid: "og:title", property: "og:title", content: siteName },
       { hid: "og:description", property: "og:description", content: siteDesc }
     ],
-    link: [{ rel: "icon", type: "image/x-icon", href: "/favicon.ico" }]
+    link: [
+      { rel: "icon", type: "image/x-icon", href: "/favicon.ico" },
+      {
+        rel: "stylesheet",
+        href:
+          "https://fonts.googleapis.com/css2?family=M+PLUS+1p:wght@400;500;700;800&display=swap"
+      }
+    ]
   },
   loading: { color: "#fff" },
   css: ["~/assets/scss/_common.scss"],
@@ -67,11 +74,6 @@ export default {
     html: true,
     linkify: true,
     typography: true
-  },
-  webfontloader: {
-    google: {
-      families: ["M PLUS 1p:Regular,Medium,Bold,Extra-Bold"]
-    }
   },
   axios: {},
   typescript: {
