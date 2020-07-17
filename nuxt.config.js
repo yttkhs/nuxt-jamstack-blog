@@ -19,6 +19,7 @@ export default {
   srcDir: "src/",
   mode: "universal",
   head: {
+    title: `${siteName}`,
     titleTemplate: `%s | ${siteName}`,
     htmlAttrs: {
       lang
@@ -62,12 +63,7 @@ export default {
     "@nuxtjs/stylelint-module",
     "@nuxt/typescript-build"
   ],
-  modules: [
-    "@nuxtjs/axios",
-    "@nuxtjs/dotenv",
-    "@nuxtjs/markdownit",
-    "nuxt-webfontloader"
-  ],
+  modules: ["@nuxtjs/axios", "@nuxtjs/dotenv", "@nuxtjs/markdownit"],
   markdownit: {
     injected: true,
     breaks: true,
