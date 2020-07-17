@@ -16,8 +16,7 @@ export default Vue.extend({
   }),
   head() {
     return {
-      title: "U's Dev Blog",
-      titleTemplate: ""
+      titleTemplate: "U's Dev Blog"
     };
   }
 });
