@@ -13,5 +13,11 @@ export default Vue.extend({
   data: () => ({
     posts: [] as SortPostsData[],
     categories: [] as string[]
-  })
+  }),
+  head() {
+    return {
+      title: "U's Dev Blog",
+      titleTemplate: ""
+    };
+  }
 });
